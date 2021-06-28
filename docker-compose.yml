@@ -1,0 +1,65 @@
+version: '3.7'
+services:
+#  wh2o-nginx:
+#    container_name: wh2o-nginx
+#    image: nginx
+#    volumes:
+#      - .:/usr/share/nginx/html
+#    ports:
+#      - "80:80"
+#    networks:
+#      - default
+  wh2o-db:
+    container_name: wh2o-db
+    image: mdillon/postgis:9.6
+    ports:
+      - "35432:5432"
+    environment:
+      POSTGRES_USER: wh2o
+      POSTGRES_PASSWORD: wh2o
+      POSTGRES_DB: wh2o
+    networks:
+      - default
+  wh2o-redis:
+    container_name: redis
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+    networks:
+      - default
+#  wh2o-api:
+#    container_name: wh2o-api
+#    image: drewalth/wh2o-api
+#    build:
+#      context: .
+#      dockerfile: ./wh2o-api/Dockerfile
+##    volumes:
+##      - ./wh2o-api:/var/www
+#      # - ./wh2o-api/node_modules:/var/www/node_modules
+#    ports:
+#      - "3000:3000"
+#    depends_on:
+#      - wh2o-db
+#    networks:
+#      - default
+#  wh2o-web:
+#    container_name: wh2o-web
+#    image: drewalth/wh2o-web
+#    volumes:
+#      - ./wh2o-web:/var/www
+#      # - ./wh2o-web/node_modules:/var/www/node_modules
+#    depends_on:
+#      - wh2o-api
+#    build:
+#      context: .
+#      dockerfile: ./wh2o-web/Dockerfile
+#    command: "npm run dev"
+#    ports:
+#      - "3001:3001"
+#    networks:
+#      - default
+networks:
+  default:
+    driver: bridge
+# volumes:
+#   node_modules:
