@@ -27,6 +27,17 @@ services:
       - "6379:6379"
     networks:
       - default
+  redis-commander:
+    container_name: redis-commander
+    image: rediscommander/redis-commander
+    restart: always
+    environment:
+      - "REDIS_HOST=localhost"
+      - "REDIS_PORT=6379"
+    ports:
+    - "8081:8081"
+    networks:
+        - default
 #  wh2o-api:
 #    container_name: wh2o-api
 #    image: drewalth/wh2o-api
@@ -35,7 +46,7 @@ services:
 #      dockerfile: ./wh2o-api/Dockerfile
 ##    volumes:
 ##      - ./wh2o-api:/var/www
-#      # - ./wh2o-api/node_modules:/var/www/node_modules
+##      - ./wh2o-api/node_modules:/var/www/node_modules
 #    ports:
 #      - "3000:3000"
 #    depends_on:
