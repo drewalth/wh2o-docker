@@ -3,4 +3,4 @@
 	url = https://github.com/drewalth/wh2o-api.git
 [submodule "wh2o-web"]
 	path = wh2o-web
-	url = https://github.com/drewalth/wh2o-web.git
+	url = https://github.com/drewalth/wh2o-web
