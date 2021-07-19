@@ -1,17 +1,14 @@
 {
   "name": "wh2o-docker",
   "version": "1.0.0",
-  "description": "",
+  "description": "The parent repo for wh2o.us",
   "main": "index.js",
-  "scripts": {
-    "dev": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/drewalth/wh2o-docker.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Drew Althage",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/drewalth/wh2o-docker/issues"

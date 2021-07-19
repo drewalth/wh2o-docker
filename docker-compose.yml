@@ -1,14 +1,5 @@
 version: '3.7'
 services:
-#  wh2o-nginx:
-#    container_name: wh2o-nginx
-#    image: nginx
-#    volumes:
-#      - .:/usr/share/nginx/html
-#    ports:
-#      - "80:80"
-#    networks:
-#      - default
   wh2o-db:
     container_name: wh2o-db
     image: mdillon/postgis:9.6
@@ -53,24 +44,6 @@ services:
 #      - wh2o-db
 #    networks:
 #      - default
-#  wh2o-web:
-#    container_name: wh2o-web
-#    image: drewalth/wh2o-web
-#    volumes:
-#      - ./wh2o-web:/var/www
-#      # - ./wh2o-web/node_modules:/var/www/node_modules
-#    depends_on:
-#      - wh2o-api
-#    build:
-#      context: .
-#      dockerfile: ./wh2o-web/Dockerfile
-#    command: "npm run dev"
-#    ports:
-#      - "3001:3001"
-#    networks:
-#      - default
 networks:
   default:
     driver: bridge
-# volumes:
-#   node_modules:
